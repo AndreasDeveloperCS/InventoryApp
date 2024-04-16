@@ -5,7 +5,9 @@
 
         <Setter Property="Height" Value="25"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5"/>
+        
     </Style>
 
     <Style TargetType="TextBlock" BasedOn="{StaticResource GeneralTextBlock}"/>

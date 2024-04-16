@@ -23,7 +23,7 @@
             <Button
                 IsEnabled="{Binding CanExecuteChangeQunatityCommand, Converter={StaticResource DoNothingConverter}}"
                 Command="{Binding ChangeQunatityCommand}">Change Quantity</Button>
-            <TextBlock Text="{Binding Warning}"></TextBlock>
+            <TextBlock Foreground="Red" Padding="5" Text="{Binding Warning}"></TextBlock>
         </StackPanel>
     </DockPanel>
     
