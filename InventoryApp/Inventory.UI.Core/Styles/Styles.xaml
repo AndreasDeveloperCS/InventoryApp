@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Converters.xaml"/>
+        <ResourceDictionary Source="ButtonStyles.xaml"/>
+        <ResourceDictionary Source="BorderStyles.xaml"/>
+        <ResourceDictionary Source="TextBox.xaml"/>
+        <ResourceDictionary Source="TextBlock.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

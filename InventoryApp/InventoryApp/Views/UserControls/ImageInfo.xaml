@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="InventoryApp.Views.UserControls.ImageInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InventoryApp.Views.UserControls"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/InventoryApp;component/Views/DataTemplates/ContentTemplates.xaml"/>
+                <ResourceDictionary Source="/Inventory.UI.Core;component/Styles/Styles.xaml"/>
+                <ResourceDictionary Source="/InventoryApp;component/Views/Styles/LocalStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <!--<TextBlock Text="{Binding PhotoName}"></TextBlock>-->
+        <Image Source="{Binding PhotoName, Converter={StaticResource ImagePathConverter}}" />
+    </Grid>
+</UserControl>

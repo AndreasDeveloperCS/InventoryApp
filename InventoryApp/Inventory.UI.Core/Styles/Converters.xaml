@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Inventory.UI.Core.Converters">
+    <converters:ColorConverter x:Key="ColorConverter"/>
+    <converters:IndexConverter x:Key="IndexConverter"/>
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <converters:WidthConverter x:Key="WidthConverter"/>
+    <converters:DoNothingConverter x:Key="DoNothingConverter"/>
+    <converters:ImageConverter x:Key="ImageConverter"/>
+    <converters:EnumToTextConverter x:Key="EnumToTextConverter"/>
+    <converters:EnumToTextConverter x:Key="ParentHeightToMaxTextBoxHeightConverter"/>
+</ResourceDictionary>

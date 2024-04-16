@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:InventoryApp.Views.Converters" >
+
+    <converters:EnvironmentTypeConverter x:Key="EnvironmentTypeConverter"/>
+    <converters:IsRoadVehicleConverter x:Key="IsRoadVehicleConverter"/>
+    <converters:WheelsNumberConverter x:Key="WheelsNumberConverter"/>
+    <converters:VehicleTypeConverter x:Key="VehicleTypeConverter"/>
+    <converters:ImagePathConverter x:Key="ImagePathConverter"/>
+    
+</ResourceDictionary>

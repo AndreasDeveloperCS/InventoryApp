@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Inventory.CustomControls.Controls">
+
+    <Style TargetType="{x:Type controls:SimpleInfoBlock}"  x:Key="StandardSimpleInfoBlockStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:SimpleInfoBlock}">
+                    
+                    <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" >
+    
+                        <Label 
+                                Content="{Binding Path=LabelText, RelativeSource={RelativeSource TemplatedParent}}" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"/>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" HorizontalContentAlignment="Right"
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource TemplatedParent}}"
+                                     TextWrapping="Wrap" 
+                                     IsReadOnly="True"
+                                     VerticalAlignment="Center"
+                                     AcceptsReturn="True"/> 
+                        </ScrollViewer>
+                    </StackPanel>
+                </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    <Style TargetType="{x:Type controls:SimpleInfoBlock}" BasedOn="{StaticResource StandardSimpleInfoBlockStyle}"/>
+</ResourceDictionary>

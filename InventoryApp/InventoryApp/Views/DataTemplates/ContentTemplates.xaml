@@ -1,0 +1,49 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewContentType="clr-namespace:InventoryApp.Views.ContentType"
+    xmlns:modelContentType="clr-namespace:Inventory.Core.InventoryModels;assembly=Inventory.Core">
+
+    <DataTemplate DataType="{x:Type modelContentType:Car}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <viewContentType:CarContentView />
+            
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type modelContentType:Boat}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <viewContentType:BoatContentView />
+            
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type modelContentType:Aeroplane}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <viewContentType:PlaneContentView/>
+            
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

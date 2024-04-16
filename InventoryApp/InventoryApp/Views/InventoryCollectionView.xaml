@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="InventoryApp.Views.InventoryCollectionView"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             xmlns:customControls="clr-namespace:Inventory.CustomControls.Controls;assembly=Inventory.CustomControls"
+             xmlns:sorting="clr-namespace:Inventory.UI.Core.Behaviors.Sorting;assembly=Inventory.UI.Core"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/Inventory.UI.Core;component/Styles/Styles.xaml"/>
+                    <ResourceDictionary Source="/Inventory.CustomControls;component/Controls/ResourceDictionaries/SearchControlDictionary.xaml"/>
+                <ResourceDictionary Source="/InventoryApp;component/Views/Styles/LocalStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+       
+        <ScrollViewer Grid.Row="0" VerticalAlignment="Stretch"
+                      VerticalScrollBarVisibility="Disabled" 
+                      Margin="10,10,10,25">
+
+            <ListView Margin="10,10,10,25" 
+                      MaxWidth="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Window}},Path=Width}"
+                      Height="Auto" Width="Auto"
+                      VerticalAlignment="Top"
+                      VerticalContentAlignment="Stretch"
+                      AllowDrop="true"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      SelectionMode="Single"
+                      SelectedItem="{Binding SelectedInventoryItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding InventoryCollection, Mode=OneWay}">
+
+                <i:Interaction.Behaviors>
+                    <sorting:SortingBehavior />
+                </i:Interaction.Behaviors>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <GridView.Columns>
+                            <GridViewColumn x:Name="Type" Width="250"
+                                            DisplayMemberBinding="{Binding Path=Vehicle, Converter={StaticResource VehicleTypeConverter}}">
+                                <GridViewColumn.Header>
+                                    <TextBlock>Type</TextBlock>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="Make" Width="250"
+                                            DisplayMemberBinding="{Binding Path=Vehicle.Make}">
+                                <GridViewColumn.Header>
+                                    <TextBlock>Make</TextBlock>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="Model" Width="250"
+                                            DisplayMemberBinding="{Binding Path=Vehicle.Model}">
+                                <GridViewColumn.Header>
+                                    <TextBlock>Model</TextBlock>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="NumberOfWheelsColumn" 
+                                            Width="Auto"
+                                            DisplayMemberBinding="{Binding Path=Vehicle, Converter={StaticResource WheelsNumberConverter}, StringFormat=## ##0}">
+                                <GridViewColumn.Header>
+                                        <TextBlock>Number of Wheels</TextBlock>
+                                    </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="IsRoadVehicle" 
+                                            Width="Auto"
+                                             >
+                                <GridViewColumn.Header>Road Vehicle</GridViewColumn.Header>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsEnabled="False" IsChecked="{Binding Path=Vehicle, Mode=OneWay, Converter={StaticResource IsRoadVehicleConverter}}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
