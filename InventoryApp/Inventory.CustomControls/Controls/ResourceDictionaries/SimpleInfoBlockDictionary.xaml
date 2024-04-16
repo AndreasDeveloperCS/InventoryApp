@@ -2,25 +2,32 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:Inventory.CustomControls.Controls">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Inventory.UI.Core;component/Styles/Styles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
     <Style TargetType="{x:Type controls:SimpleInfoBlock}"  x:Key="StandardSimpleInfoBlockStyle">
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:SimpleInfoBlock}">
 
-                    <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" >
+                    <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" Background="LightGray">
 
                         <Label  Content="{Binding Path=LabelText, RelativeSource={RelativeSource TemplatedParent}}" 
-                                VerticalAlignment="Center"
+                                VerticalAlignment="Center" x:Name="dynamicWidthParameterSourceLabel"
                                 HorizontalAlignment="Left"/>
                         
-                        <ScrollViewer VerticalScrollBarVisibility="Disabled" 
-                                      HorizontalAlignment="Right" 
-                                      HorizontalContentAlignment="Right"
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                                      HorizontalAlignment="Stretch" 
+                                      HorizontalContentAlignment="Stretch"
                                       HorizontalScrollBarVisibility="Disabled">
+                            
                             <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource TemplatedParent}}"
                                      TextWrapping="Wrap" 
                                      IsReadOnly="True"
+                                     HorizontalAlignment="Stretch" 
+                                     HorizontalContentAlignment="Stretch"
                                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                                      VerticalAlignment="Center"
                                      AcceptsReturn="True"/>

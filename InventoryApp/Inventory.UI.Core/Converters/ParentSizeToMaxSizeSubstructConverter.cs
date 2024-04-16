@@ -4,14 +4,15 @@ using System.Windows.Data;
 
 namespace Inventory.UI.Core.Converters
 {
-    internal class ParentHeightToMaxTextBoxHeightConverter: IValueConverter
+    internal class ParentSizeToMaxSizeSubstructConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            double coefficientConversion = (parameter is double) ? (double)parameter : 1;
-            if (value is double parentHeight && parentHeight > 0)
+           
+            if (value is double parentElementSize && parentElementSize > 0)
             {
-                return parentHeight * coefficientConversion;
+                double coefficientSubstruct = (parameter is double) ? (double)parameter : parentElementSize / 2;
+                return parentElementSize - coefficientSubstruct;
             }
             return double.NaN;
         }

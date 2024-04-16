@@ -8,5 +8,6 @@
     <converters:DoNothingConverter x:Key="DoNothingConverter"/>
     <converters:ImageConverter x:Key="ImageConverter"/>
     <converters:EnumToTextConverter x:Key="EnumToTextConverter"/>
-    <converters:ParentHeightToMaxTextBoxHeightConverter x:Key="ParentHeightToMaxTextBoxHeightConverter"/>
+    <converters:ParentSizeToMaxControlSizeConverter x:Key="ParentSizeToMaxControlSizeConverter"/>
+    <converters:ParentSizeToMaxSizeSubstructConverter x:Key="ParentSizeToMaxSizeSubstructConverter"/>
 </ResourceDictionary>
