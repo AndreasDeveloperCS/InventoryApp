@@ -80,7 +80,9 @@
                             <GridViewColumn x:Name="IsRoadVehicle" 
                                             Width="Auto"
                                              >
-                                <GridViewColumn.Header>Road Vehicle</GridViewColumn.Header>
+                                <GridViewColumn.Header>
+                                    <TextBlock>Road Vehicle</TextBlock>
+                                </GridViewColumn.Header>
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <CheckBox IsEnabled="False" IsChecked="{Binding Path=Vehicle, Mode=OneWay, Converter={StaticResource IsRoadVehicleConverter}}" />

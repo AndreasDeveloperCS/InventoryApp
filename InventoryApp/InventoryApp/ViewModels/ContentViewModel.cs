@@ -16,7 +16,7 @@ namespace InventoryApp.ViewModels
         private string _warning;
         private ICommand _changeQunatityCommand;
         private string _currentQuanityInputString;
-        private bool _canExecuteChangeQunatityCommand;
+        private bool _canExecuteChangeQunatityCommand = false;
 
         public ContentViewModel(IEventAggregator aggregator) : base(aggregator)
         {
@@ -38,7 +38,7 @@ namespace InventoryApp.ViewModels
 
         public bool CanExecuteChangeQunatityCommand
         {
-            get { return ChangeQunatityCommand?.CanExecute(null) ?? false; }
+            get { return _canExecuteChangeQunatityCommand; }
             set
             {
                 if (_canExecuteChangeQunatityCommand == value)
