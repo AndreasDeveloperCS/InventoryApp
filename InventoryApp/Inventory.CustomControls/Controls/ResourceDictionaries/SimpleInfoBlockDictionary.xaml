@@ -14,13 +14,14 @@
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Left"/>
                         
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                        <ScrollViewer VerticalScrollBarVisibility="Disabled" 
                                       HorizontalAlignment="Right" 
                                       HorizontalContentAlignment="Right"
                                       HorizontalScrollBarVisibility="Disabled">
                             <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource TemplatedParent}}"
                                      TextWrapping="Wrap" 
                                      IsReadOnly="True"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
                                      VerticalAlignment="Center"
                                      AcceptsReturn="True"/>
                         </ScrollViewer>

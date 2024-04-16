@@ -7,7 +7,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:views="clr-namespace:InventoryApp.Views"
         mc:Ignorable="d"
-        Title="MainWindow" >
+        Title="MainWindow"   ScrollViewer.VerticalScrollBarVisibility="Visible">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -15,14 +15,14 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid   ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid.RowDefinitions>
             <extensions:RowDefinitionExtended Height="Auto" />
             <extensions:RowDefinitionExtended Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <extensions:ColumnDefinitionExtended Width="3*"/>
-            <extensions:ColumnDefinitionExtended Width="*"/>
+            <extensions:ColumnDefinitionExtended Width="70*"/>
+            <extensions:ColumnDefinitionExtended Width="30*"/>
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
@@ -38,14 +38,16 @@
                         HorizontalContentAlignment="Stretch" 
         />
 
-        <!--<ContentControl prism:RegionManager.RegionName="ContentRegion" >-->
+        <ScrollViewer Grid.Row="1" Grid.Column="1" 
+                      VerticalAlignment="Stretch"
+                      VerticalScrollBarVisibility="Visible">
             <views:ContentView  Grid.Row="1" Grid.Column="1"
                                 VerticalAlignment="Top" 
+                                ScrollViewer.VerticalScrollBarVisibility="Visible"
                                 HorizontalAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch" 
                                 DataContext="{Binding ContentViewModel}"/>
-        <!--</ContentControl>-->
-
+      </ScrollViewer>
     </Grid>
 </Window>

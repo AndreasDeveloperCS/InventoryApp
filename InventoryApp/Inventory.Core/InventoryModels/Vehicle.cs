@@ -27,13 +27,13 @@ namespace Inventory.Core.InventoryModels
             bool flag = Make == other.Make
                         && Model == other.Model
                         && PhotoName == other.PhotoName
-                        && Environment == other.Environment;
+                        && Environment.ToString() == other.Environment.ToString();
             return flag;
         }
 
         public override int GetHashCode()
         {
-            return Make.GetHashCode() ^ Model?.GetHashCode() ^ PhotoName?.GetHashCode() ^ Environment.GetHashCode() ?? 0;
+            return Make.GetHashCode() ^ Model?.GetHashCode() ^ PhotoName?.GetHashCode() ^ Environment.ToString().GetHashCode() ?? 0;
         }
     }
 

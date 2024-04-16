@@ -13,7 +13,7 @@ namespace InventoryApp.Views.Converters
             {
                 try
                 {
-                    var uri = $"pack://application:,,,/Inventory.Core;component/InventoryItemPhotoCore/{imagePath}";
+                    var uri = $"pack://application:,,,/InventoryApp;component/InventoryItemPhoto/{imagePath}";
               
                     var bitmapImage = new BitmapImage();
                     bitmapImage.BeginInit();
