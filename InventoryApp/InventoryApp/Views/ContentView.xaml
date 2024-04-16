@@ -21,7 +21,7 @@
             <Label>Quantity: </Label>
             <TextBox Text="{Binding QuanityInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <Button
-                IsEnabled="{Binding CanExecuteChangeQunatityCommand}"
+                IsEnabled="{Binding CanExecuteChangeQunatityCommand, ConverterParameter={Binding Warning}, Converter={StaticResource DoNothingConverter}}"
                 Command="{Binding ChangeQunatityCommand}">Change Quantity</Button>
             <TextBlock Text="{Binding Warning}"></TextBlock>
         </StackPanel>
