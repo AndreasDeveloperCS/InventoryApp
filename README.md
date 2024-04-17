@@ -1,7 +1,6 @@
+InventoryApp 
 
 ![image](https://github.com/AndreasDeveloperCS/InventoryApp/assets/38625058/5e2c7c1b-0501-4b5d-931f-b4c43c5c616d)
-
-InventoryApp 
 
 Small demo solution implemented on WPF with simple logic and DataTemplates
 
