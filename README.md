@@ -23,6 +23,6 @@ Inventory.CustomControls - Controls that could be reused in other applications o
 Inventory.UserControls - UserControls Blocks that could be reused in other applications of infrastructure related with similar style and functionality 
 
 
-InventoryApp - Main Application with integrated functionality regarding  
+InventoryApp - Main Application with integrated functionality 
 
 ![image](https://github.com/AndreasDeveloperCS/InventoryApp/assets/38625058/486eb20a-7a46-448f-b495-4fa07df28140)
