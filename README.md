@@ -1,5 +1,5 @@
 
-![image](https://github.com/AndreasDeveloperCS/InventoryApp/assets/38625058/486eb20a-7a46-448f-b495-4fa07df28140)
+![image](https://github.com/AndreasDeveloperCS/InventoryApp/assets/38625058/5e2c7c1b-0501-4b5d-931f-b4c43c5c616d)
 
 InventoryApp 
 
@@ -25,3 +25,5 @@ Inventory.UserControls - UserControls Blocks that could be reused in other appli
 
 
 InventoryApp - Main Application with integrated functionality regarding  
+
+![image](https://github.com/AndreasDeveloperCS/InventoryApp/assets/38625058/486eb20a-7a46-448f-b495-4fa07df28140)
