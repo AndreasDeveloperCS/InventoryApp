@@ -9,7 +9,7 @@ namespace Inventory.UI.Core.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool flag = false;
+            bool flag = value is null ? false : true;
             if (value is bool)
             {
                 var nullable = value as bool?;

@@ -16,7 +16,7 @@
                         <DataTemplate x:Key="VerticalTemplate">
                             <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" Background="LightGray">
 
-                                <Label  FontWeight="Bold"
+                                <Label  FontWeight="Bold" FontSize="14"
                                     Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
                                         VerticalAlignment="Center" 
                                         HorizontalAlignment="Left"> 
@@ -39,7 +39,7 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label FontWeight="Bold"
+                                <Label FontWeight="Bold" FontSize="14"
                                     Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
                                         VerticalAlignment="Center" 
                                         HorizontalAlignment="Left" Grid.Column="0"> 

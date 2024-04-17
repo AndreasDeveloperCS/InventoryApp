@@ -24,8 +24,8 @@
                               Content="{Binding SelectedInventoryItem.Vehicle, Mode=OneWay}" />
         </ScrollViewer>
 
-      
-        <DockPanel VerticalAlignment="Bottom" Grid.Row="1">
+
+        <DockPanel VerticalAlignment="Bottom" Grid.Row="1" Visibility="{Binding SelectedInventoryItem, Converter={StaticResource BooleanToVisibilityConverter}}">
             <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Background="LightGray">
 
                 <Label FontWeight="Bold">Quantity:</Label>

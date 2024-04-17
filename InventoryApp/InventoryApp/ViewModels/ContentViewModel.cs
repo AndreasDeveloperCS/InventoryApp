@@ -31,7 +31,6 @@ namespace InventoryApp.ViewModels
             {
                 _changeQunatityCommand = value;
                 OnPropertyChanged(nameof(ChangeQunatityCommand));
-                // Update the CanExecute state when the command changes
                 OnPropertyChanged(nameof(CanExecuteChangeQunatityCommand));
             }
         }
@@ -130,7 +129,6 @@ namespace InventoryApp.ViewModels
                 OnPropertyChanged();
             }
         }
-
 
         private void UpdateContent(InventoryItem inventoryItem)
         {
