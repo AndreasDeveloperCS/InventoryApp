@@ -2,7 +2,7 @@
 
 namespace Inventory.Core.InventoryModels
 {
-    public class Vehicle
+    public class Vehicle: IComparable
     {
         public Vehicle(string make, string model, VehicleEnvironment environment,
             string photoName)
@@ -16,6 +16,16 @@ namespace Inventory.Core.InventoryModels
         public string Model { get; private set; }
         public VehicleEnvironment Environment { get; private set; }
         public string PhotoName { get; private set; }
+
+        public int CompareTo(object? obj)
+        {
+            int nameComparison = string.Compare(GetType().Name, obj?.GetType().Name, StringComparison.OrdinalIgnoreCase);
+            if (nameComparison != 0)
+            {
+                return nameComparison;
+            }
+            return 1;
+        }
 
         public override bool Equals(object obj)
         {

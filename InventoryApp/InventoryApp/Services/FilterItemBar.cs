@@ -77,7 +77,7 @@ namespace InventoryApp.Services
             }
         }
   
-        public int Quantity
+        public int WheelQuantity
         {
             get { return _quantity; }
             set
@@ -128,50 +128,7 @@ namespace InventoryApp.Services
         {
             try
             {
-                bool containsName = true;
-                bool containsFullName = true;
-                bool containsSize = true;
-                bool containsExtension = true;
-
-                  
-
-                //if (c == '>' || c == '<' || c == '=')
-                //{
-                //    bool isSuccess = double.TryParse(FilterSizeKb.Substring(1, FilterSizeKb.Length - 1),
-                //        out sizeLimit);
-
-                //    if (c == '<' && isSuccess && sizeLimit > 0)
-                //    {
-                //        containsSize = item.Size < sizeLimit;
-                //    }
-
-                //    else if (c == '>' && isSuccess)
-                //    {
-                //        containsSize = item.Size > sizeLimit;
-                //    }
-
-                //    else if (c == '=' && isSuccess)
-                //    {
-                //        containsSize = Math.Abs(item.Size - sizeLimit) < Tolerance;
-                //    }
-                //}
-                //else if (double.TryParse(FilterSizeKb, out sizeLimit))
-                //{
-                //    containsSize = item.Size.ToString(CultureInfo.InvariantCulture) ==
-                //                   sizeLimit.ToString(CultureInfo.InvariantCulture);
-                //}
-
-                containsName = string.IsNullOrEmpty(Model) ||
-                               item.Vehicle.Model.ToLower().Contains(Model.ToLower());
-
-                containsFullName = string.IsNullOrEmpty(Model) ||
-                                   item.Vehicle.Model.ToLower().Contains(Model.ToLower());
-
-
-                containsExtension = string.IsNullOrEmpty(Model) ||
-                                    item.Vehicle.Model.ToLower().Contains(Model.ToLower());
-
-                return containsName && containsExtension && containsSize && containsFullName;
+                return true;
             }
             catch (Exception ex)
             {

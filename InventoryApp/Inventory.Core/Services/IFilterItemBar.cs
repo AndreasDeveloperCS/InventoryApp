@@ -7,8 +7,7 @@ namespace InventoryCore.Services
         string Type { get; set; }
         string Make { get; set; }
         string Model { get; set; }
-        int Quantity { get; set; }
-
+        int WheelQuantity { get; set; }
         bool IsRoadVehicle { get; set; }
     }
 }

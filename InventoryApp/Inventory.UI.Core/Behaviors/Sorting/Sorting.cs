@@ -95,22 +95,9 @@ namespace Inventory.UI.Core.Behaviors.Sorting
                 list.SortDescriptions.Clear();
                 var sortDescription = new SortDescription(column, _sortDirection);
                 list.SortDescriptions.Add(sortDescription);
-
-                //if (column.Contains("Size"))
-                //{
-                //    if (sortDescription.Direction == ListSortDirection.Ascending)
-                //    {
-                //        list.SourceCollection.Cast<LibraryItem>().OrderBy(x => x.Size);
-                //    }
-                //    if (sortDescription.Direction == ListSortDirection.Descending)
-                //    {
-                //        list.SourceCollection.Cast<LibraryItem>().OrderByDescending(x => x.Size);
-                //    }
-                //}
             }
             catch (Exception ex)
             {
-
                 throw new InvalidOperationException(ex.Message);
             }
         }
