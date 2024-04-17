@@ -15,7 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Background="Yellow">
+    <Grid>
         
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

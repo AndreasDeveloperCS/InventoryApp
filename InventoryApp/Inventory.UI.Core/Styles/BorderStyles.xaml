@@ -6,7 +6,7 @@
         <Setter Property="BorderBrush" Value="DarkBlue"/>
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding"  Value="10 2" />
-        
+        <Setter Property="CornerRadius"  Value="2" />
     </Style>
 
     <Style TargetType="Border" BasedOn="{StaticResource GeneralBorder}"/>

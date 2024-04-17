@@ -14,9 +14,10 @@
                     <ControlTemplate.Resources>
                      
                         <DataTemplate x:Key="VerticalTemplate">
-                            <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" Background="LightGray"  HorizontalAlignment="Stretch">
+                            <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" Background="LightGray">
 
-                                <Label  Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
+                                <Label  FontWeight="Bold"
+                                    Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
                                         VerticalAlignment="Center" 
                                         HorizontalAlignment="Left"> 
                                 </Label>
@@ -26,7 +27,6 @@
                                          IsReadOnly="True"
                                          HorizontalContentAlignment="Stretch"
                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                         VerticalAlignment="Center"
                                          AcceptsReturn="True">   
 
                                 </TextBox>
@@ -39,16 +39,17 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label  Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
+                                <Label FontWeight="Bold"
+                                    Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
                                         VerticalAlignment="Center" 
                                         HorizontalAlignment="Left" Grid.Column="0"> 
                                 </Label>
 
-                                <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}" Background="LightGray"
+                                <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
                                     TextWrapping="Wrap" 
                                     IsReadOnly="True"
                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                    VerticalAlignment="Center"
+                                 
                                     AcceptsReturn="True" Grid.Column="1">
 
                                 </TextBox>
