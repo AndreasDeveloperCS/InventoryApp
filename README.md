@@ -2,7 +2,7 @@ InventoryApp
 
 ![image](https://github.com/AndreasDeveloperCS/InventoryApp/assets/38625058/5e2c7c1b-0501-4b5d-931f-b4c43c5c616d)
 
-Small demo solution implemented on WPF with simple logic and DataTemplates
+Simple demo solution implemented using WPF and C#/.NET 6 with simple logic and DataTemplates
 
 
 Architecturally solution is devided to 6 separate projects with aim of simplify maintainance and following low coupling approach:
