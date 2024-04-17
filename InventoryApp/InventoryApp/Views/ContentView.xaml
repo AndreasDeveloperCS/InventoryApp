@@ -16,9 +16,7 @@
     
     <DockPanel Margin="5" Background="LightGoldenrodYellow">
 
-        <ContentPresenter DockPanel.Dock="Top" Content="{Binding SelectedInventoryItem.Vehicle, Mode=OneWay}" 
-                          
-                         />
+        <ContentPresenter DockPanel.Dock="Top" Content="{Binding SelectedInventoryItem.Vehicle, Mode=OneWay}" />
         <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Background="LightGray">
             <Label>Quantity: </Label>
             <TextBox Text="{Binding QuanityInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>

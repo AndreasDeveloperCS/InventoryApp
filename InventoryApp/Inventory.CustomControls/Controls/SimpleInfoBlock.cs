@@ -11,6 +11,9 @@ namespace Inventory.CustomControls.Controls
         public static readonly DependencyProperty TextBoxTextProperty =
             DependencyProperty.Register("TextBoxText", typeof(string), typeof(SimpleInfoBlock));
 
+        public static readonly DependencyProperty TextBoxWidthProperty =
+           DependencyProperty.Register("TextBoxWidth", typeof(string), typeof(SimpleInfoBlock));
+
         public static readonly DependencyProperty InfoOrientationProperty =
             DependencyProperty.Register("InfoOrientation", typeof(Orientation), typeof(SimpleInfoBlock));
 
@@ -31,6 +34,14 @@ namespace Inventory.CustomControls.Controls
             get { return (string)GetValue(TextBoxTextProperty); }
             set {
                 SetValue(TextBoxTextProperty, value); 
+            }
+        }
+        public string TextBoxWidth
+        {
+            get { return (string)GetValue(TextBoxWidthProperty); }
+            set
+            {
+                SetValue(TextBoxWidthProperty, value);
             }
         }
     }

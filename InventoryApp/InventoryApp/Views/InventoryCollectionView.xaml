@@ -8,6 +8,7 @@
              xmlns:sorting="clr-namespace:Inventory.UI.Core.Behaviors.Sorting;assembly=Inventory.UI.Core"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" >
+    
     <UserControl.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
@@ -17,6 +18,7 @@
             </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
     </UserControl.Resources>
+    
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

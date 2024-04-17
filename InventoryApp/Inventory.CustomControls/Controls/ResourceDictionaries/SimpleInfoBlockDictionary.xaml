@@ -7,28 +7,71 @@
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="{x:Type controls:SimpleInfoBlock}"  x:Key="StandardSimpleInfoBlockStyle">
-
+       
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:SimpleInfoBlock}">
+                    <ControlTemplate.Resources>
+                     
+                        <DataTemplate x:Key="VerticalTemplate">
+                            <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" Background="LightGray"  HorizontalAlignment="Stretch">
 
-                    <StackPanel Orientation="{Binding Path=InfoOrientation, RelativeSource={RelativeSource TemplatedParent}}" Background="LightGray">
+                                <Label  Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Left"> 
+                                </Label>
 
-                        <Label  Content="{Binding Path=LabelText, RelativeSource={RelativeSource TemplatedParent}}" 
-                                VerticalAlignment="Center" x:Name="dynamicWidthParameterSourceLabel"
-                                HorizontalAlignment="Left"/>
-                        
-                  
-                            <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource TemplatedParent}}"
-                                     TextWrapping="Wrap" 
-                                     IsReadOnly="True"
-                                     HorizontalAlignment="Stretch" 
-                                     HorizontalContentAlignment="Stretch"
-                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                     VerticalAlignment="Center"
-                                     AcceptsReturn="True"/>
-                    </StackPanel>
+                                <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
+                                         TextWrapping="Wrap" 
+                                         IsReadOnly="True"
+                                         HorizontalContentAlignment="Stretch"
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                         VerticalAlignment="Center"
+                                         AcceptsReturn="True">   
+
+                                </TextBox>
+                            </StackPanel>
+                        </DataTemplate>
+
+                        <DataTemplate x:Key="HorizontalTemplate">
+                            <Grid HorizontalAlignment="Stretch" Background="LightGray">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label  Content="{Binding Path=LabelText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Left" Grid.Column="0"> 
+                                </Label>
+
+                                <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource AncestorType={x:Type controls:SimpleInfoBlock}}}" Background="LightGray"
+                                    TextWrapping="Wrap" 
+                                    IsReadOnly="True"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                    VerticalAlignment="Center"
+                                    AcceptsReturn="True" Grid.Column="1">
+
+                                </TextBox>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <ContentPresenter x:Name="contentPresenter"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
                     
+                        <Trigger Property="InfoOrientation" Value="Vertical">
+                            <Setter TargetName="contentPresenter" Property="ContentTemplate" Value="{StaticResource VerticalTemplate}"/>
+                        </Trigger>
+
+                        <Trigger Property="InfoOrientation" Value="Horizontal">
+                            <Setter TargetName="contentPresenter" Property="ContentTemplate" Value="{StaticResource HorizontalTemplate}"/>
+                        </Trigger>
+                        
+                    </ControlTemplate.Triggers>
+                   
+                   
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
