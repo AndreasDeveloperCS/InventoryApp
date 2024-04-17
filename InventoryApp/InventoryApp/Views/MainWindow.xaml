@@ -42,14 +42,14 @@
 
         <ScrollViewer Grid.Row="1" Grid.Column="1" 
                       VerticalAlignment="Stretch"
-                      ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                    >
+                      ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <views:ContentView  VerticalAlignment="Stretch"
                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
                                 HorizontalAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"
                                 HorizontalContentAlignment="Stretch" 
                                 DataContext="{Binding ContentViewModel}"/>
-      </ScrollViewer>
+
+        </ScrollViewer>
     </Grid>
 </Window>

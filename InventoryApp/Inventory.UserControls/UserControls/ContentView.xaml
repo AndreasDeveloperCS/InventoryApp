@@ -12,22 +12,33 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ContentPresenter DockPanel.Dock="Top" 
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              Content="{Binding SelectedInventoryItem.Vehicle, Mode=OneWay}" />
+        </ScrollViewer>
 
-    <DockPanel Margin="5" Background="LightGray" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Bottom">
+        <DockPanel VerticalAlignment="Bottom" Grid.Row="1" Visibility="{Binding SelectedInventoryItem, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Background="LightGray">
 
-        <ContentPresenter DockPanel.Dock="Top" Content="{Binding SelectedInventoryItem.Vehicle, Mode=OneWay}" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Background="LightGray">
-            
-            <Label>Quantity: </Label>
-            <TextBox Text="{Binding QuanityInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
-            
-            <Button VerticalAlignment="Bottom"
+                <Label FontWeight="Bold">Quantity:</Label>
+                <TextBox Text="{Binding QuanityInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     Background="DarkSlateGray" Foreground="White"/>
+
+                <Button 
                 IsEnabled="{Binding CanExecuteChangeQunatityCommand, Converter={StaticResource DoNothingConverter}}"
                 Command="{Binding ChangeQunatityCommand}">Change Quantity</Button>
-            
-            <TextBlock Foreground="Red" Padding="5" Text="{Binding Warning}"/>
-            
-        </StackPanel>
-    </DockPanel>
+
+                <TextBlock Foreground="Red" Padding="5" Text="{Binding Warning}"/>
+
+            </StackPanel>
+        </DockPanel>
+    </Grid>
     
 </UserControl>

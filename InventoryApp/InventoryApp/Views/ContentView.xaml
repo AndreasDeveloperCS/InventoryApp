@@ -18,6 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <ContentPresenter DockPanel.Dock="Top" 
                               ScrollViewer.VerticalScrollBarVisibility="Auto"
