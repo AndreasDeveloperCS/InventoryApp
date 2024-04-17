@@ -18,12 +18,16 @@
 
         <ContentPresenter DockPanel.Dock="Top" Content="{Binding SelectedInventoryItem.Vehicle, Mode=OneWay}" />
         <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Background="LightGray">
+            
             <Label>Quantity: </Label>
             <TextBox Text="{Binding QuanityInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
+            
             <Button VerticalAlignment="Bottom"
                 IsEnabled="{Binding CanExecuteChangeQunatityCommand, Converter={StaticResource DoNothingConverter}}"
                 Command="{Binding ChangeQunatityCommand}">Change Quantity</Button>
+            
             <TextBlock Foreground="Red" Padding="5" Text="{Binding Warning}"/>
+            
         </StackPanel>
     </DockPanel>
     
