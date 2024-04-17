@@ -10,10 +10,8 @@ namespace Inventory.UI.Core.Behaviors.Sorting
     
     public class Sorting
     {
-        // holds sort direction variable
         private ListSortDirection _sortDirection;
 
-        // holds column that is sorted
         private GridViewColumnHeader _sortColumn;
 
      
@@ -31,7 +29,6 @@ namespace Inventory.UI.Core.Behaviors.Sorting
                         return null;
                     }
 
-                    // Remove arrow from previously sorted header
                     if (_sortColumn != null)
                     {
                         var adornerLayer = AdornerLayer.GetAdornerLayer(_sortColumn);
@@ -51,7 +48,6 @@ namespace Inventory.UI.Core.Behaviors.Sorting
 
                     if (_sortColumn == column)
                     {
-                        // Toggle sorting direction
                         _sortDirection = _sortDirection == ListSortDirection.Ascending ?
                                                            ListSortDirection.Descending :
                                                            ListSortDirection.Ascending;
@@ -65,7 +61,6 @@ namespace Inventory.UI.Core.Behaviors.Sorting
                     var sortingAdorner = new SortingAdorner(column, _sortDirection);
                     AdornerLayer.GetAdornerLayer(column).Add(sortingAdorner);
 
-                    // if binding is used and property name doesn't match header content
                     var b = _sortColumn?.Column?.DisplayMemberBinding as Binding;
                     if (b != null)
                     {
