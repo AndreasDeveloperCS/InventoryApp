@@ -18,11 +18,7 @@
                                 VerticalAlignment="Center" x:Name="dynamicWidthParameterSourceLabel"
                                 HorizontalAlignment="Left"/>
                         
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" 
-                                      HorizontalAlignment="Stretch" 
-                                      HorizontalContentAlignment="Stretch"
-                                      HorizontalScrollBarVisibility="Disabled">
-                            
+                  
                             <TextBox Text="{Binding  Path=TextBoxText, RelativeSource={RelativeSource TemplatedParent}}"
                                      TextWrapping="Wrap" 
                                      IsReadOnly="True"
@@ -31,8 +27,6 @@
                                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                                      VerticalAlignment="Center"
                                      AcceptsReturn="True"/>
-                        </ScrollViewer>
-                        
                     </StackPanel>
                     
                 </ControlTemplate>
